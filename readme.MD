@@ -32,7 +32,13 @@ As telas desenvolvidas são:
 * Home: área restrira do sistema disponível após login
 * Perfil: janela contendo informações do usuário, edição de dados e exclusão do perfil
 
-(inserir imagens aqui)
+![Tela de login](https://github.com/linnikmaciel/eldorado-web/blob/master/prints/login.PNG)
+
+![Tela de cadastro](https://github.com/linnikmaciel/eldorado-web/blob/master/prints/cadastro.PNG)
+
+![Tela home](https://github.com/linnikmaciel/eldorado-web/blob/master/prints/home.PNG)
+
+![Tela de perfil](https://github.com/linnikmaciel/eldorado-web/blob/master/prints/perfil.PNG)
 
 ## Instalação
 
