@@ -1,0 +1,51 @@
+<ion-header>
+	<ion-toolbar color="warning">
+		<ion-title>
+			Informações do perfil
+		</ion-title>
+
+		<ion-buttons slot="end">
+			<ion-button (click)="fecharVerPerfil()">
+				<ion-icon name="close"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div class="slide-inner ion-padding">
+		<ion-item class="ion-margin-top" lines="none">
+			<ion-label>Nome</ion-label>
+			<ion-input disabled="{{!configuracoes.editar}}" [(ngModel)]="usuario.nome" type="text" placeholder="Nome"></ion-input>
+		</ion-item>
+		
+		<ion-item class="ion-margin-top" lines="none">
+			<ion-label>E-mail</ion-label>
+			<ion-input disabled="{{!configuracoes.editar}}" [(ngModel)]="usuario.email" type="text" placeholder="E-mail"></ion-input>
+			<ion-text color="danger" *ngIf="!validacoes.emailValidado">
+				<p>Forneça um e-mail válido</p>
+			</ion-text>
+		</ion-item>
+		
+		<ion-item class="ion-margin-top" lines="none">
+			<ion-label>Senha</ion-label>
+			<ion-input disabled="{{!configuracoes.editar}}" [(ngModel)]="usuario.senha" type="{{configuracoes.verSenha.campo}}" placeholder="Senha"></ion-input>
+			<ion-button color="warning" (click)="verSenha()">
+				<ion-icon name="{{configuracoes.verSenha.icone}}"></ion-icon>
+			</ion-button>
+			<ion-text color="danger" *ngIf="!validacoes.senhaValidada">
+				<p>Forneça uma senha válida</p>
+			</ion-text>
+		</ion-item>
+
+		<br>
+		<div *ngIf="!configuracoes.editar">
+			<ion-button *ngIf="!configuracoes.editar" shape="round" expand="full" color="success" (click)="habilitarCancelarEdicao()">Editar perfil</ion-button>
+			<ion-button shape="round" expand="full" color="danger" (click)="deletar()">Excluir perfil</ion-button>
+		</div>
+		<div *ngIf="configuracoes.editar">
+			<ion-button shape="round" expand="full" color="success" (click)="editar()">Salvar alterações</ion-button>
+			<ion-button shape="round" expand="full" color="light" (click)="habilitarCancelarEdicao()">Cancelar</ion-button>
+		</div>
+	</div>
+</ion-content>

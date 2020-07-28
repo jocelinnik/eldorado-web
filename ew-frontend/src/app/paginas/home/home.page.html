@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+	<ion-toolbar color="warning">
+		<ion-title>
+			Nome: {{usuario.nome}} <br>
+			E-mail: {{usuario.email}}
+		</ion-title>
+		<ion-buttons slot="end">
+			<ion-button (click)="verPerfil()">
+				<ion-icon name="person"></ion-icon> Ver Perfil
+			</ion-button>
+
+			<ion-button (click)="sair()">
+				<ion-icon name="power"></ion-icon> Sair
+			</ion-button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div id="container">
+		<strong>
+			Bem vindo ao Eldorado Web <br>
+			Este sistema foi desenvolvido como teste para vaga de estagiário
+		</strong>
+	</div>
+</ion-content>

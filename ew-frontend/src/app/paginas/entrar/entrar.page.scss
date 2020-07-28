@@ -1,0 +1,32 @@
+.container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 75%;
+    margin: 0 auto;
+    z-index: 2;
+
+    &.top {
+        top: 5%;
+    }
+
+    &.bottom {
+        bottom: 30%;
+    }
+}
+
+ion-slides {
+    height: 100%;
+
+    .slide-inner {
+        width: 75%;
+        background-color: #ffc409;
+        border-radius: 10px;
+
+        ion-item {
+            --display: block;
+            --background: rgba(255, 255, 255, 0.2);
+            --border-radius: 10px;
+        }
+    }
+}

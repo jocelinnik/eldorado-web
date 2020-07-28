@@ -1,0 +1,3 @@
+--require testes/helpers
+--reporter spec
+-slow 5000

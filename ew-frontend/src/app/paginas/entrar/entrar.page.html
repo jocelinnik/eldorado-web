@@ -1,0 +1,78 @@
+<ion-content class="swiper-no-swiping">
+    <div class="containe top">
+        <ion-segment (ionChange)="mudarSegmento($event)" value="login" color="warning">
+            <ion-segment-button value="login">
+                <ion-label>Login</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="cadastro">
+                <ion-label>Cadastro</ion-label>
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+
+    <ion-slides>
+        <ion-slide>
+            <div class="slide-inner ion-padding">
+                <h2>Login</h2>
+            
+                <ion-item class="ion-margin-top" lines="none">
+                    <ion-input name="email" [(ngModel)]="usuarioLocal.email" type="text" placeholder="E-mail"></ion-input>
+                    <ion-text color="danger" *ngIf="!validacoes.emailValidado">
+                        <p>Forneça um e-mail válido</p>
+                    </ion-text>
+                    <ion-text color="danger" *ngIf="!validacoes.emailCorreto">
+                        <p>Seu e-mail está incorreto</p>
+                    </ion-text>
+                </ion-item>
+            
+                <ion-item class="ion-margin-top" lines="none">
+                    <ion-input name="senha" [(ngModel)]="usuarioLocal.senha" type="{{configuracoes.verSenha.campo}}" placeholder="Senha"></ion-input>
+                    <ion-button color="warning" (click)="verSenha()">
+                        <ion-icon name="{{configuracoes.verSenha.icone}}"></ion-icon>
+                    </ion-button>
+                    <ion-text color="danger" *ngIf="!validacoes.senhaValidada">
+                        <p>Forneça uma senha válida</p>
+                    </ion-text>
+                    <ion-text color="danger" *ngIf="!validacoes.senhaCorreta">
+                        <p>Sua senha está incorreta</p>
+                    </ion-text>
+                </ion-item>
+            
+                <ion-button class="ion-margin-top" shape="round" expand="full" color="success" (click)="entrar()">
+                    Entrar
+                </ion-button>
+            </div>
+        </ion-slide>
+
+        <ion-slide>
+            <div class="slide-inner ion-padding">
+                <h2>Cadastro</h2>
+            
+                <ion-item class="ion-margin-top" lines="none">
+                    <ion-input name="nome" [(ngModel)]="usuarioLocal.nome" type="text" placeholder="Nome"></ion-input>
+                </ion-item>
+            
+                <ion-item class="ion-margin-top" lines="none">
+                    <ion-input name="email" [(ngModel)]="usuarioLocal.email" type="text" placeholder="E-mail"></ion-input>
+                    <ion-text color="danger" *ngIf="!validacoes.emailValidado">
+                        <p>Forneça um e-mail válido</p>
+                    </ion-text>
+                </ion-item>
+            
+                <ion-item class="ion-margin-top" lines="none">
+                    <ion-input name="senha" [(ngModel)]="usuarioLocal.senha" type="{{configuracoes.verSenha.campo}}" placeholder="Senha"></ion-input>
+                    <ion-button color="warning" (click)="verSenha()">
+                        <ion-icon name="{{configuracoes.verSenha.icone}}"></ion-icon>
+                    </ion-button>
+                    <ion-text color="danger" *ngIf="!validacoes.senhaValidada">
+                        <p>Forneça uma senha válida</p>
+                    </ion-text>
+                </ion-item>
+            
+                <ion-button class="ion-margin-top" shape="round" expand="full" color="success" (click)="cadastrar()">
+                    Cadastrar
+                </ion-button>
+            </div>
+        </ion-slide>
+    </ion-slides>
+</ion-content>
